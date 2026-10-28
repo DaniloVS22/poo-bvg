@@ -3,12 +3,21 @@ class Cliente:
     
 
     def __init__(self, nome, idade, saldo, status):
+        """
+        Inicializa os dados do cliente.
+
+        Entradas: nome, idade, saldo e status.
+        Saída: cria o cliente com seus dados privados.
+        """
+
+        if saldo < 0:
+            raise ValueError("O saldo inicial não pode ser negativo.")
+
         self.__nome = nome
         self.__idade = idade
         self.__saldo = saldo
-        if saldo < 0:
-            raise ValueError("O saldo inicial não pode ser negativo.")
         self.__status = status
+
 
     @property
     def nome(self):
